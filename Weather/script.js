@@ -5,8 +5,8 @@ const weatherDetails = document.querySelector('.weather-details')
 
 
 const BASE_URL = "https://api.openweathermap.org";
-const API_KEY = "088f19ce8801d76673107fe4bc52ee3b";
-//https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=088f19ce8801d76673107fe4bc52ee3b
+const API_KEY = "Your API Key here"; //Api_key can be gotten from the official website "https://api.openweathermap.org" NB: ACCOUNT CREATION IS REQUIRED
+
 
 searchButton.addEventListener('click', async () =>{
     try{

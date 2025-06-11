@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Weather Forecast!!!</h2>
+
+        <div class="search-field">
+            <div class="input">
+                <i class='bx bxs-edit-location' ></i>
+                <input type="text" id="search-field" placeholder="Search by city,contry....(e.g: sokoto,ng)">
+            </div>
+        <button id="search"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+        <span id="error-msg"></span>
+        <div class="weather-details">
+            <div class="image"><img src="images/sunny.png" alt="sunny image"></div>
+            <div class="contents">
+                <h1><span id="temerature"></span>°C</h1>
+            </div>
+        </div>
+        <div class="other-info">
+            <div class="wind-info others">
+                <div class="wind-img img"><img src="images/wind-icon.png"></div>
+                <h6>Wind speed</h6>
+                <p class="content"><span id="wind"></span>km/h</p>
+            </div>
+            <div class="humidity-info others">
+                <div class="humidity-img img"><img src="images/humidity.png"></div>
+                <h6>Humidity</h6>
+                <p class="content"> <span id="humidity"></span> %</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

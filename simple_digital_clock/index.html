@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="circle" style=" --clr: #ffa500;">
+            <div class="dot"></div><div class="dot2"></div>
+            <div id="hour" class="hour hand">00</div>
+        </div>
+        
+        <div class="circle" style=" --clr: #800080;">
+            <div class="dot"></div><div class="dot2"></div>
+            <div id="minute" class="minute hand">00</div>
+        </div>
+        
+        
+        <div class="circle" style=" --clr: #ff0000;">
+            <div class="dot"></div><div class="dot2"></div>
+            <div id="second" class="second hand">00</div>
+        </div>
+        <!-- <div class="sec-span">
+            <div class="am_pm" id="am_pm"></div>
+        </div> -->
+    </div>
+
+
+
+    <script>
+        setInterval(() => {
+            const hourHand = document.querySelector('#hour')
+            const minHand = document.querySelector('#minute')
+            const secHand = document.querySelector('#second')
+            const amPm = document.querySelector('#am_pm')
+
+            const date = new Date()
+            let hours = date.getHours()
+            let mins = date.getMinutes()
+            let secs = date.getSeconds()
+            
+            //console.log("First", hours)
+ 
+            //hours = hours < 10 ? `0${hours}` : hours
+            
+            //console.log("Second", hours)
+
+            hourHand.innerHTML = hours > 12 ? hours - 12 : hours
+            
+            if (hourHand.innerHTML < 10){
+                hourHand.innerHTML = `0${hourHand.innerHTML}`
+            }
+
+            //console.log("Third", hours)
+
+            minHand.innerHTML = mins
+            secHand.innerHTML = secs
+            amPm.innerHTML = hour >= 12 ? "AM" : "PM"
+        }, 1000)
+
+    </script>
+</body>
+</html>

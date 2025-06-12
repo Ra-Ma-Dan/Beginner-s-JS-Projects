@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body{
+    background: linear-gradient(
+        270deg,
+        #ffa520 10%,
+        #ff1111 100%
+    );
+}
+.clock-container{
+    display: flex;
+    gap: 5rem;
+}
+.clock-container .circle{
+    background-color: black;
+    width: 4em;
+    font-size: 4rem;
+    aspect-ratio: 1/1;
+    display: flex;justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    border: 5px solid var(--clr);
+}
+.sec-span{
+    position: relative;
+}
+.am_pm{
+    position: absolute;
+    right: 6rem;
+    bottom: 2rem;
+    font-size: 3rem;
+    font-family: monospace;
+}
+.circle .dot{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--clr);
+    position: absolute;
+    top: -15px;
+    border-radius: 50%;
+}
+.circle .dot2{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--clr);
+    position: absolute;
+    bottom: -15px;
+    border-radius: 50%;
+}

@@ -5,38 +5,43 @@ const counter = document.querySelector('#counter');
 //console.log("\u274C")
 
 const addTask = () => {
-    if (inputField.value == ''){
+    if (inputField.value === ''){
         alert("The input field can't be Empty!!!");
     } else{
-        let li = document.createElement("Li");
+        let li = document.createElement("li");
         
         counter.innerText++;
         listContainer.appendChild(li);
-        li.innerText = inputField.value;
-        inputField.value = '';
-
+        li.innerHTML = inputField.value;
+        
         let span = document.createElement('span');
         li.appendChild(span);
-        span.textContent = '\u2716';
-
-        li.addEventListener('click', (e) => {
-            if(e.target === span){
-                li.parentElement.remove();
-                counter.innerText--;
-            } else{
-                li.classList.toggle('checked');
-            }
-            saveTask()
-        })
+        span.innerHTML = '\u2716';
     }
     saveTask()
+    inputField.value = '';
+    //console.log(listContainer.innerHTML);
+    //console.log(counter.innerText);
     
 }
+listContainer.addEventListener('click', (e) => {
+    if(e.target.tagName === 'SPAN'){
+        e.target.parentElement.remove();
+        counter.innerText--;
+    } else if (e.target.tagName === 'LI'){
+        e.target.classList.toggle('checked');
+    }
+    saveTask()
+})
+    
 const saveTask = () =>{
     localStorage.setItem('data', listContainer.innerHTML)
+    localStorage.setItem('counter', counter.innerText)
 }
 
 
 const showTask = () =>{
     listContainer.innerHTML = localStorage.getItem('data')
+    counter.innerText = localStorage.getItem('counter')
 }
+showTask()

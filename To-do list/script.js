@@ -2,7 +2,7 @@ const inputField = document.querySelector("#inputField");
 const listContainer = document.querySelector('.list-container');
 const counter = document.querySelector('#counter');
 
-console.log("\u274C")
+//console.log("\u274C")
 
 const addTask = () => {
     if (inputField.value == ''){
@@ -21,12 +21,22 @@ const addTask = () => {
 
         li.addEventListener('click', (e) => {
             if(e.target === span){
-                li.remove();
+                li.parentElement.remove();
                 counter.innerText--;
             } else{
                 li.classList.toggle('checked');
             }
+            saveTask()
         })
     }
+    saveTask()
     
+}
+const saveTask = () =>{
+    localStorage.setItem('data', listContainer.innerHTML)
+}
+
+
+const showTask = () =>{
+    listContainer.innerHTML = localStorage.getItem('data')
 }
